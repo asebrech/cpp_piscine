@@ -6,12 +6,11 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:06:35 by asebrech          #+#    #+#             */
-/*   Updated: 2022/01/18 13:07:59 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/01/31 12:27:13 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cctype>
 #include <locale>
 
 int	main(int ac, char **av)
