@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/01 13:53:38 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/01 16:49:34 by asebrech         ###   ########.fr       */
+/*   Created: 2022/02/01 16:18:42 by asebrech          #+#    #+#             */
+/*   Updated: 2022/02/01 16:58:06 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "HumanB.hpp"
 
-
-Weapon::Weapon(void) {
-
-	return ;
-}
-
-Weapon::Weapon(std::string const &type) : _type(type) {
+HumanB::HumanB(std::string name) : _name(name), _weapon(NULL) {
 
 	return ;
 }
 
-Weapon::~Weapon(void) {
+HumanB::~HumanB(void) {
 
 	return ;
 }
 
-std::string const	&Weapon::getType(void) const {
+void	HumanB::setWeapon(Weapon &weapon) {
 
-	return this->_type;
+	this->_weapon = &weapon;
+	return ;
 }
 
-void	Weapon::setType(std::string const &type) {
+void	HumanB::attack(void) const {
 
-	this->_type = type;
+	if (this->_weapon)
+		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
+	else
+		std::cout << this->_name << " can't attack without a weapon it will be suicide !!" << std::endl;
+	return ;
 }
