@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 21:15:09 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/02 10:54:08 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/03 13:51:01 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int ac, char **av) {
 
 		std::string	stream(buffer.str());
 		if (stream.empty()) {
-			std::cout << "Error" << std::endl << "empty file" << std::endl;
+			std::cout << "Error" << std::endl << "wrong filename or empty file" << std::endl;
 			return 1;
 		}
 		std::string	file(av[1]);
@@ -46,7 +46,7 @@ int	main(int ac, char **av) {
 	}
 	else {
 		std::cout << "Error" << std::endl;
-		std::cout << "sedisforlosers takes three parameters in the following order: a filename and two strings, s1 and s2" << std::endl;
+		std::cout << "replace takes three parameters in the following order: a filename and two strings, s1 and s2" << std::endl;
 		return 1;
 	}
 	return 0;

@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:24:58 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/03 11:54:07 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/03 12:54:49 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(void) {
 	heap->announce();
 	
 	delete heap;
-	std::cout << std::endl << "heap zombie killed !" << std::endl;
 
 	return 0;
 }

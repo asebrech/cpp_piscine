@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 13:54:59 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/03 10:20:36 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/03 13:56:21 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@ class	Karen {
 
 		Karen(void);
 		~Karen(void);
+
 		void	complain(std::string level);
 
 	private:
+
+		static std::string	lvl[];
 
 		void	debug(void);
 		void	info(void);

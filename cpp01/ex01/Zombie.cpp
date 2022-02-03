@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:18:26 by asebrech          #+#    #+#             */
-/*   Updated: 2022/01/31 11:35:44 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/03 13:11:44 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ Zombie::Zombie(std::string str) : name(str) {
 }
 Zombie::~Zombie(void) {
 
+	std::cout << this->name << " zombie killed !" << std::endl;
+	return ;
+}
+
+void	Zombie::setName(std:: string name) {
+
+	this->name = name;
 	return ;
 }
 
