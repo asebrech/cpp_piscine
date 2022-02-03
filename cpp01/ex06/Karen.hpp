@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 15:24:58 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/03 11:54:07 by asebrech         ###   ########.fr       */
+/*   Created: 2022/02/02 13:54:59 by asebrech          #+#    #+#             */
+/*   Updated: 2022/02/03 11:22:59 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef KAREN_HPP
+# define KAREN_HPP
+
 #include <iostream>
+#include <string>
 
-int	main(void) {
+class	Karen {
 
-	std::cout << "stack zombie in comming !" << std::endl;
-	randomChump("stack");
+	public:
 
-	std::cout << std::endl << "heap zombie in comming !" << std::endl;
-	Zombie	*heap;
-	heap = newZombie("heap");
-	heap->announce();
-	
-	delete heap;
-	std::cout << std::endl << "heap zombie killed !" << std::endl;
+		Karen(void);
+		~Karen(void);
 
-	return 0;
-}
+		void	complain(std::string level);
+		void	karenfilter(std::string level);
+
+	private:
+
+		static std::string	lvl[];
+
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+};
+
+#endif

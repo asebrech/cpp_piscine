@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 13:54:43 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/03 11:34:09 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/03 11:25:45 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,35 @@ void	Karen::complain(std::string level) {
 		&Karen::error
 	};
 
-	std::string	str[] = {
-		"DEBUG",
-		"INFO",
-		"WARNING",
-		"ERROR"
-	};
 
-	for (int i = 0; i < 4; i++) {
+	
+	for(int i = 0; i < 4; i++) {
  
-		if (level.compare(str[i]) == 0) {
-
+		if (level.compare(Karen::lvl[i]) == 0)
 			CALL_MEMBER_FN(this, relou[i]) ();
-			/*      Same as :     (this->*relou[i])();     */
+	}
+}
+
+void	Karen::karenfilter(std::string level) {
+
+	int	i = 0;
+	while(i < 4) {
+ 
+		if (level.compare(Karen::lvl[i]) == 0) {
+
+			int	j = i;
+			while (j < 4) {
+				this->complain(Karen::lvl[j]);
+				j++;
+			}
+			break ;
 		}
+		i++;
+	}
+	if (i == 4) {
+		std::cout << "[ Probably complaining about"
+			" insignificant problems ]"
+			<< std::endl;
 	}
 }
 
@@ -85,3 +100,5 @@ void	Karen::error(void) {
 		" the manager now."
 		<< std::endl << std::endl;
 }
+
+std::string Karen::lvl[] = { "DEBUG", "INFO", "WARNING", "ERROR" };

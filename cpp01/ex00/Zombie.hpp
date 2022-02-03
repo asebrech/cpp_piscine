@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 15:03:35 by asebrech          #+#    #+#             */
-/*   Updated: 2022/01/30 15:36:00 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/03 11:54:01 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,9 @@ private:
 	std::string	name;
 
 };
+
+Zombie* newZombie( std::string name );
+
+void randomChump( std::string name );
 
 #endif

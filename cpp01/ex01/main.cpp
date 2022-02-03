@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:24:58 by asebrech          #+#    #+#             */
-/*   Updated: 2022/01/31 11:46:20 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/03 11:49:09 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(void) {
 
 	std::cout << "horde of zombies in comming !!" << std::endl << std::endl;
 
-	Zombie	*horde = zombieHorde(fu, "bar");
+	Zombie	*horde = zombieHorde(fu, "Zombie");
 	
 	for (int i = 0; i < fu; i++)
 		horde[i].announce();	
