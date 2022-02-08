@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 21:06:00 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/08 18:32:22 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/08 19:12:26 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,11 @@ public:
 	float	toFloat(void) const;
 	int	toInt(void) const;
 
-	static Fixed const	&min(Fixed const &lhs, Fixed const &rhs);
-	static Fixed const	&max(Fixed const &lhs, Fixed const &rhs);
+	static Fixed	&min(Fixed &lhs, Fixed &rhs);
+	static Fixed	&max(Fixed &lhs, Fixed &rhs);
+
+	static float	min(Fixed const &lhs, Fixed const &rhs);
+	static float	max(Fixed const &lhs, Fixed const &rhs);
 
 private:
 

@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 21:05:38 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/08 18:35:20 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/08 19:04:39 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,7 +242,7 @@ bool	operator<=(Fixed const &lhs, Fixed const &rhs) {
 }
 
 
-Fixed const	&Fixed::min(Fixed const &lhs, Fixed const &rhs) {
+Fixed	&Fixed::min(Fixed &lhs, Fixed &rhs) {
 
 	if (lhs < rhs)
 		return lhs;
@@ -250,12 +250,29 @@ Fixed const	&Fixed::min(Fixed const &lhs, Fixed const &rhs) {
 		return rhs;
 }
 
-Fixed const	&Fixed::max(Fixed const &lhs, Fixed const &rhs) {
+Fixed	&Fixed::max(Fixed &lhs, Fixed &rhs) {
 
 	if (lhs > rhs)
 		return lhs;
 	else
 		return rhs;
+}
+
+
+float Fixed::min(Fixed const &lhs, Fixed const &rhs) {
+
+	if (lhs < rhs)
+		return lhs.toFloat();
+	else
+		return rhs.toFloat();
+}
+
+float Fixed::max(Fixed const &lhs, Fixed const &rhs) {
+
+	if (lhs > rhs)
+		return lhs.toFloat();
+	else
+		return rhs.toFloat();
 }
 
 
@@ -265,6 +282,5 @@ std::ostream	&operator<<(std::ostream &o, Fixed const &i) {
 
 	return o;
 }
-
 
 int const Fixed::_fractional = 8;
