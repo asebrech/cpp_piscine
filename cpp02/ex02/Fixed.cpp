@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 21:05:38 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/08 17:29:01 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/08 18:35:20 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -239,6 +239,23 @@ bool	operator>=(Fixed const &lhs, Fixed const &rhs) {
 bool	operator<=(Fixed const &lhs, Fixed const &rhs) {
 
 	return (lhs.getFixed() <= rhs.getFixed());
+}
+
+
+Fixed const	&Fixed::min(Fixed const &lhs, Fixed const &rhs) {
+
+	if (lhs < rhs)
+		return lhs;
+	else
+		return rhs;
+}
+
+Fixed const	&Fixed::max(Fixed const &lhs, Fixed const &rhs) {
+
+	if (lhs > rhs)
+		return lhs;
+	else
+		return rhs;
 }
 
 

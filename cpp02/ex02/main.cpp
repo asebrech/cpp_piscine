@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:20:34 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/08 17:29:39 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/08 18:35:56 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(void) {
 
 	std::cout << b << std::endl;
 
-	//std::cout << Fixed::max(a, b) << std::endl;
+	std::cout << Fixed::max(a, b) << std::endl;
 
 	return 0;
 }
