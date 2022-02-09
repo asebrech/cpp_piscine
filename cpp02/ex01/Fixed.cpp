@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 21:05:38 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/08 14:47:44 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:31:56 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Fixed::Fixed(const int raw) : _raw(raw) {
 	return ;
 }
 
+
 Fixed::Fixed(const float raw) : _raw(raw) {
 
 	std::cout << "Float constructor called" << std::endl;
@@ -29,6 +30,7 @@ Fixed::Fixed(const float raw) : _raw(raw) {
 
 	return ;
 }
+
 
 Fixed::Fixed(void) : _raw(0), _fixed(0) {
 
@@ -47,12 +49,14 @@ Fixed::Fixed(Fixed const &src) {
 	return ;
 }
 
+
 Fixed::~Fixed(void) {
 
 	std::cout << "Destructor called" << std::endl;
 
 	return ;
 }
+
 
 void	Fixed::_toFixed(const float raw) {
 
@@ -61,20 +65,24 @@ void	Fixed::_toFixed(const float raw) {
 	return ;
 }
 
+
 float	Fixed::toFloat(void) const {
 
 	return ((float)(this->_fixed / (float)(1 << Fixed::_fractional)));
 }
+
 
 int	Fixed::toInt(void) const {
 
 	return ((this->_fixed / (1 << Fixed::_fractional)));
 }
 
+
 float	Fixed::getRawBitsFloat(void) const {
 
 	return this->_raw;
 }
+
 
 int	Fixed::getRawBits(void) const {
 
@@ -82,6 +90,7 @@ int	Fixed::getRawBits(void) const {
 
 	return (int)this->_raw;
 }
+
 
 void	Fixed::setRawBits(int const raw) {
 
@@ -94,6 +103,7 @@ void	Fixed::setRawBits(int const raw) {
 	return ;
 }
 
+
 void	Fixed::setRawBits(float const raw) {
 
 	std::cout << "setRawBits member function called" << std::endl;
@@ -105,13 +115,28 @@ void	Fixed::setRawBits(float const raw) {
 	return ;
 }
 
+
+int	Fixed::getFixed(void) const {
+
+	return this->_fixed;
+}
+
+
+void	Fixed::setFixed(int fixed) {
+
+	this->_fixed = fixed;
+
+	this->_raw = this->toFloat();
+
+	return ;
+}
+
+
 Fixed	&Fixed::operator=(Fixed const &rhs) {
 
 	std::cout << "Assignation operator called" << std::endl;
 
-	this->_raw = rhs.getRawBitsFloat();
-
-	this->_toFixed(_raw);
+	this->setFixed(rhs.getFixed());
 
 	return *this;
 }

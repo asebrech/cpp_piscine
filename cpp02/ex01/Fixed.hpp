@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 21:06:00 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/08 12:28:20 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:30:21 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ public:
 	float	getRawBitsFloat(void) const;
 	void	setRawBits(int const raw);
 	void	setRawBits(float const raw);
+
+	int	getFixed(void) const;
+	void	setFixed(int fixed);
 
 	float	toFloat(void) const;
 	int	toInt(void) const;
