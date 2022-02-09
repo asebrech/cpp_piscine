@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 21:05:38 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/08 19:04:39 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:55:47 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,6 @@ int	Fixed::toInt(void) const {
 	return ((this->_fixed / (1 << Fixed::_fractional)));
 }
 
-
-float	Fixed::getRawBitsFloat(void) const {
-
-	return this->_raw;
-}
-
-
 int	Fixed::getRawBits(void) const {
 
 //	std::cout << "getRawBits member function called" << std::endl;
@@ -103,19 +96,6 @@ void	Fixed::setRawBits(int const raw) {
 	return ;
 }
 
-
-void	Fixed::setRawBits(float const raw) {
-
-//	std::cout << "setRawBits member function called" << std::endl;
-
-	this->_raw = raw;
-
-	this->_toFixed(raw);
-
-	return ;
-}
-
-
 int	Fixed::getFixed(void) const {
 
 	return this->_fixed;
@@ -126,7 +106,7 @@ void	Fixed::setFixed(int fixed) {
 
 	this->_fixed = fixed;
 
-	this->_raw = this->toFloat();
+	this->_raw = this->toInt();
 
 	return ;
 }
@@ -194,22 +174,13 @@ Fixed	operator-(Fixed const &lhs, Fixed const &rhs) {
 
 Fixed	operator*(Fixed const &lhs, Fixed const &rhs) {
 
-	Fixed	fixed;
-
-	fixed.setRawBits(lhs.getRawBitsFloat() * rhs.getRawBitsFloat());
-
-	return fixed;
+	return (Fixed(lhs.toFloat() * rhs.toFloat()));
 }
 
 Fixed	operator/(Fixed const &lhs, Fixed const &rhs) {
 
-	Fixed	fixed;
-
-	fixed.setRawBits(lhs.getRawBitsFloat() / rhs.getRawBitsFloat());
-
-	return fixed;
+	return (Fixed(lhs.toFloat() / rhs.toFloat()));
 }
-
 
 bool	operator==(Fixed const &lhs, Fixed const &rhs) {
 

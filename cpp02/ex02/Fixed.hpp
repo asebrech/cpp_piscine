@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 21:06:00 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/08 19:12:26 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:53:20 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ public:
 	Fixed	operator--(int);
 
 	int	getRawBits(void) const;
-	float	getRawBitsFloat(void) const;
 	void	setRawBits(int const raw);
-	void	setRawBits(float const raw);
 
 	int	getFixed(void) const;
 	void	setFixed(int fixed);
@@ -56,7 +54,7 @@ private:
 
 	void	_toFixed(const float raw);
 
-	float	_raw;
+	int	_raw;
 	int	_fixed;
 
 	static	int const	_fractional;
