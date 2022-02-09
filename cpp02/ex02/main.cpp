@@ -6,13 +6,12 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:20:34 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/08 18:35:56 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:39:31 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Fixed.hpp"
-#include <iostream>
 
 int	main(void) {
 
