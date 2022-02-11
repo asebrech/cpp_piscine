@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 21:05:38 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/09 18:06:08 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/11 18:39:59 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	Fixed::setFixed(int fixed) {
 
 Fixed	&Fixed::operator=(Fixed const &rhs) {
 
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 
 	this->setFixed(rhs.getFixed());
 
