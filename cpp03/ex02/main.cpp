@@ -6,45 +6,49 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 14:05:43 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/16 17:33:31 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/16 17:30:43 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-void	status(ClapTrap &clap) {
+void	status(FragTrap &frag) {
 
 	std::cout << std::endl;
 
-	std::cout << "ClapTrap Status :" << std::endl;
-	std::cout << "ClapTrap Name : " << clap.getName()  << std::endl;
-	std::cout << "ClapTrap Hit points : " << clap.getHitPoint()  << std::endl;
-	std::cout << "ClapTrap Energy points : " << clap.getEnergyPoint()  << std::endl;
-	std::cout << "ClapTrap Attack damage : " << clap.getAttackDamage()  << std::endl;
+	std::cout << "FragTrap Status :" << std::endl;
+	std::cout << "FragTrap Name : " << frag.getName()  << std::endl;
+	std::cout << "FragTrap Hit points : " << frag.getHitPoint()  << std::endl;
+	std::cout << "FragTrap Energy points : " << frag.getEnergyPoint()  << std::endl;
+	std::cout << "FragTrap Attack damage : " << frag.getAttackDamage()  << std::endl;
 
 	std::cout << std::endl;
 
 	return ;
 }
 
+
 int	main(void) {
 
-	ClapTrap	clap("clap");
-	ClapTrap	trap("trap");
+	FragTrap	frag("frag");
 
-	status(clap);
+	status(frag);
+
+	ScavTrap	scav("scav");
 
 	std::cout << std::endl;
-	for (int i = 0; i <= 10; i++) {
-
-		clap.attack("trap");
-		trap.takeDamage(0);
-		trap.attack("clap");
-		clap.takeDamage(0);
-	}
+	scav.guardGate();
+	frag.attack("scav");
+	scav.takeDamage(frag.getAttackDamage());
+	scav.attack("frag");
+	frag.takeDamage(scav.getAttackDamage());
+	frag.highFivesGuys();
+	scav.guardGate();
 	std::cout << std::endl;
 
-	status(clap);
+	status(frag);
 
 	return 0;
 }

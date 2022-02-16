@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 13:26:05 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/13 21:34:05 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/14 18:03:15 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,6 @@ std::string	ClapTrap::getName(void) const {
 	return this->_name;
 }
 
-void	ClapTrap::setName(std::string name){
-
-	this->_name = name; 
-}
-
 ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs) {
 
 	std::cout << "ClapTrap copy assignment operator called" << std::endl;
@@ -66,6 +61,11 @@ std::ostream	&operator<<(std::ostream &o, ClapTrap const &rhs) {
 	o << rhs.getName();
 
 	return o;
+
+}
+int	ClapTrap::getHitPoint(void) const {
+
+	return this->_hitPoint;
 }
 
 int	ClapTrap::getEnergyPoint(void) const {
@@ -73,29 +73,9 @@ int	ClapTrap::getEnergyPoint(void) const {
 	return this->_energyPoint;
 }
 
-void	ClapTrap::setEnergyPoint(int point) {
-
-	this->_energyPoint = point;
-}
-
-int	ClapTrap::getHitPoint(void) const {
-
-	return this->_hitPoint;
-}
-
-void	ClapTrap::setHitPoint(int point) {
-
-	this->_hitPoint = point;
-}
-
 int	ClapTrap::getAttackDamage(void) const {
 
 	return this->_attackDamage;
-}
-
-void	ClapTrap::setAttackDamage(int point) {
-
-	this->_attackDamage = point;
 }
 
 void	ClapTrap::attack(const std::string &target) {

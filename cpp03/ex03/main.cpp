@@ -6,21 +6,24 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 14:05:43 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/16 17:33:31 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/16 17:13:36 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-void	status(ClapTrap &clap) {
+void	status(DiamondTrap &diamond) {
 
 	std::cout << std::endl;
 
-	std::cout << "ClapTrap Status :" << std::endl;
-	std::cout << "ClapTrap Name : " << clap.getName()  << std::endl;
-	std::cout << "ClapTrap Hit points : " << clap.getHitPoint()  << std::endl;
-	std::cout << "ClapTrap Energy points : " << clap.getEnergyPoint()  << std::endl;
-	std::cout << "ClapTrap Attack damage : " << clap.getAttackDamage()  << std::endl;
+	std::cout << "DiamondTrap Status :" << std::endl;
+	std::cout << "DiamondTrap Name : " << diamond.getName()  << std::endl;
+	std::cout << "DiamondTrap Hit points : " << diamond.getHitPoint()  << std::endl;
+	std::cout << "DiamondTrap Energy points : " << diamond.getEnergyPoint()  << std::endl;
+	std::cout << "DiamondTrap Attack damage : " << diamond.getAttackDamage()  << std::endl;
 
 	std::cout << std::endl;
 
@@ -29,22 +32,25 @@ void	status(ClapTrap &clap) {
 
 int	main(void) {
 
-	ClapTrap	clap("clap");
-	ClapTrap	trap("trap");
+	DiamondTrap	diamond("diamond");
 
-	status(clap);
+	status(diamond);
 
-	std::cout << std::endl;
-	for (int i = 0; i <= 10; i++) {
-
-		clap.attack("trap");
-		trap.takeDamage(0);
-		trap.attack("clap");
-		clap.takeDamage(0);
-	}
+	FragTrap	frag("frag");
+	
 	std::cout << std::endl;
 
-	status(clap);
+	diamond.guardGate();
+	frag.attack("diamond");
+	diamond.takeDamage(frag.getAttackDamage());
+	diamond.attack("frag");
+	frag.takeDamage(diamond.getAttackDamage());
+	diamond.whoAmI();
+	diamond.highFivesGuys();
+
+	std::cout << std::endl;
+
+	status(diamond);
 
 	return 0;
 }

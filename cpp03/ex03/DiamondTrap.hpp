@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 17:47:37 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/16 17:18:04 by asebrech         ###   ########.fr       */
+/*   Created: 2022/02/14 14:33:25 by asebrech          #+#    #+#             */
+/*   Updated: 2022/02/14 18:29:03 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
 # include <string>
 # include <iostream>
-# include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 
-class	ScavTrap : public ClapTrap {
+class	DiamondTrap : public ScavTrap, public FragTrap {
 
 public:
 
-	ScavTrap(void);
-	ScavTrap(std::string	name);
-	ScavTrap(ScavTrap const	&src);
-	~ScavTrap(void);
+	DiamondTrap(void);
+	DiamondTrap(std::string	name);
+	DiamondTrap(DiamondTrap const	&src);
+	~DiamondTrap(void);
 
-	ScavTrap	&operator=(ScavTrap const &rhs);
+	DiamondTrap	&operator=(DiamondTrap const &rhs);
 	std::string	getName(void) const;
 
-	void	attack(const std::string &target);
+	using ScavTrap::attack;
 
-	void	guardGate(void);	
+	void	whoAmI(void) const;	
+
+private:
+
+	std::string	_name;
 };
 
-std::ostream	&operator<<(std::ostream &o, ScavTrap const &rhs);
+std::ostream	&operator<<(std::ostream &o, DiamondTrap const &rhs);
 
 #endif

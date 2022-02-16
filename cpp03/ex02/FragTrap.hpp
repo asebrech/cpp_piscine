@@ -1,51 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 13:25:53 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/14 17:11:04 by asebrech         ###   ########.fr       */
+/*   Created: 2022/02/13 17:47:37 by asebrech          #+#    #+#             */
+/*   Updated: 2022/02/16 17:17:51 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
 # include <string>
 # include <iostream>
+# include "ClapTrap.hpp"
 
-class	ClapTrap {
+class	FragTrap : public ClapTrap {
 
 public:
 
-	ClapTrap(void);
-	ClapTrap(std::string	name);
-	ClapTrap(ClapTrap const	&src);
-	~ClapTrap(void);
+	FragTrap(void);
+	FragTrap(std::string	name);
+	FragTrap(FragTrap const	&src);
+	~FragTrap(void);
 
-	ClapTrap	&operator=(ClapTrap const &rhs);
-
+	FragTrap	&operator=(FragTrap const &rhs);
 	std::string	getName(void) const;
 
 	void	attack(const std::string &target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
 
-	int	getHitPoint(void) const;
-	int	getEnergyPoint(void) const;
-	int	getAttackDamage(void) const;
-
-protected:
-
-	std::string	_name;
-	int	_hitPoint;
-	int	_energyPoint;
-	int	_attackDamage;
-
+	void	highFivesGuys(void);	
 };
 
-std::ostream	&operator<<(std::ostream &o, ClapTrap const &rhs);
+std::ostream	&operator<<(std::ostream &o, FragTrap const &rhs);
 
 #endif

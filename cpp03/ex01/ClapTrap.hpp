@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 13:25:53 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/13 21:32:48 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:11:04 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,18 @@ public:
 	~ClapTrap(void);
 
 	ClapTrap	&operator=(ClapTrap const &rhs);
+
 	std::string	getName(void) const;
 
 	void	attack(const std::string &target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 
+	int	getHitPoint(void) const;
+	int	getEnergyPoint(void) const;
 	int	getAttackDamage(void) const;
 
 protected:
-
-	void	setName(std::string name);
-	int	getEnergyPoint(void) const;
-	void	setEnergyPoint(int);
-	int	getHitPoint(void) const;
-	void	setHitPoint(int);
-	void	setAttackDamage(int);
-
-private:
 
 	std::string	_name;
 	int	_hitPoint;
