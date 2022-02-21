@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 14:05:43 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/17 19:21:58 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/21 15:27:25 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,52 +15,15 @@
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-
-void	wrong(void) {
-
-	const WrongAnimal* meta = new WrongAnimal();
-	const WrongAnimal* i = new WrongCat();
-
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the WrongAnimal sound!
-	meta->makeSound();
-
-	std::cout << std::endl;
-
-	delete meta;
-	delete i;	
-
-	return ;
-}
-
-void	correct(void) {
-
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-
-	std::cout << std::endl;
-
-	delete	meta;
-	delete	j;
-	delete	i;
-
-	return ;
-}
+#include "Brain.hpp"
 
 int	main(void) {
 
-	correct();
 
-	std::cout << std::endl << std::endl;
 
-	wrong();
+	Brain	a = Brain();
+
+	std::cout << a.getIdeas()[0] << std::endl;
 
 	return 0;
 }
