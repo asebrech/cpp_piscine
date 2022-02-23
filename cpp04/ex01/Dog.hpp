@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:49:08 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/17 13:00:11 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/23 17:25:14 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 # include <iostream>
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class	Dog : public Animal {
 
 public:
 
 	Dog(void);
-	Dog(std::string	type);
 	Dog(Dog const	&src);
 	virtual ~Dog(void);
 
@@ -31,7 +31,14 @@ public:
 
 	std::string	getType(void) const;
 
+	Brain	*getBrain(void) const;
+
 	virtual	void	makeSound(void) const;
+
+private:
+
+	Brain	*_brain;
+
 };
 
 std::ostream	&operator<<(std::ostream &o, Dog const &rhs);

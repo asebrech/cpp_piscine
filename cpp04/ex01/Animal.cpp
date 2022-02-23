@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:29:25 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/17 12:21:18 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/23 16:44:27 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,6 @@
 Animal::Animal(void) : _type("Animal") {
 
 	std::cout << "Animal default constructor called" << std::endl;
-
-	return ;
-}
-
-Animal::Animal(std::string type) : _type(type) {
-
-	std::cout << "Animal string constructor called" << std::endl;
 
 	return ;
 }

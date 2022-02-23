@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 14:05:43 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/21 15:27:25 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/23 18:11:02 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,37 @@
 
 int	main(void) {
 
+	int	i = 4;
+	Animal	*animal[i];
+
+	std::cout << "creating array" << std::endl << std::endl;
+
+	for (int j = 0; j < (i / 2); j++)
+	{
+		animal[j] = new Dog();	
+	}
+	
+	std::cout << std::endl;
+
+	for (int j = (i / 2); j < i; j++)
+	{
+		animal[j] = new Cat();	
+	}
+
+	std::cout << std::endl << "deleting array" << std::endl << std::endl;
 
 
-	Brain	a = Brain();
+	for (int j = 0; j < (i / 2); j++)
+	{
+		delete animal[j];
+	}
 
-	std::cout << a.getIdeas()[0] << std::endl;
+	std::cout << std::endl;
+	
+	for (int j = (i / 2); j < i; j++)
+	{
+		delete animal[j];
+	}
 
 	return 0;
 }

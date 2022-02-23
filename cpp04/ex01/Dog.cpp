@@ -6,31 +6,21 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:48:19 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/17 12:01:42 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/23 17:24:33 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void) {
-
-	this->_type = "Dog";
+Dog::Dog(void) : _brain(new Brain) {
 
 	std::cout << "Dog default constructor called" << std::endl;
 
+	this->_type = "Dog";
 	return ;
 }
 
-Dog::Dog(std::string type) {
-
-	this->_type = type;
-
-	std::cout << "Dog string constructor called" << std::endl;
-
-	return ;
-}
-
-Dog::Dog(Dog const &src) {
+Dog::Dog(Dog const &src) : _brain(new Brain) {
 
 	std::cout << "Dog copy constructor called" << std::endl;
 
@@ -43,6 +33,8 @@ Dog::~Dog(void) {
 
 	std::cout << "Dog destructor called" << std::endl;
 
+	delete _brain;
+
 	return ;
 }
 
@@ -51,11 +43,20 @@ std::string	Dog::getType(void) const {
 	return this->_type;
 }
 
+Brain	*Dog::getBrain(void) const {
+
+	return this->_brain;
+}
+
 Dog	&Dog::operator=(Dog const &rhs) {
 
 	std::cout << "Dog copy assignment operator called" << std::endl;
 
-	this->_type = rhs.getType();
+	if (this != &rhs)
+	{
+		this->_type = rhs.getType();
+		*this->_brain = *rhs.getBrain();
+	}
 
 	return *this;
 }

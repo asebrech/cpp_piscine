@@ -6,31 +6,22 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:48:19 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/17 12:24:45 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/23 16:43:38 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void) {
-
-	this->_type = "Cat";
+Cat::Cat(void) : _brain(new Brain) {
 
 	std::cout << "Cat default constructor called" << std::endl;
 
-	return ;
-}
-
-Cat::Cat(std::string type) {
-
-	this->_type = type;
-
-	std::cout << "Cat string constructor called" << std::endl;
+	this->_type = "Cat";
 
 	return ;
 }
 
-Cat::Cat(Cat const &src) {
+Cat::Cat(Cat const &src) : _brain(new Brain) {
 
 	std::cout << "Cat copy constructor called" << std::endl;
 
@@ -43,6 +34,8 @@ Cat::~Cat(void) {
 
 	std::cout << "Cat destructor called" << std::endl;
 
+	delete	_brain;
+
 	return ;
 }
 
@@ -51,11 +44,20 @@ std::string	Cat::getType(void) const {
 	return this->_type;
 }
 
+Brain	*Cat::getBrain(void) const {
+
+	return this->_brain;
+}
+
 Cat	&Cat::operator=(Cat const &rhs) {
 
 	std::cout << "Cat copy assignment operator called" << std::endl;
 
-	this->_type = rhs.getType();
+	if (this != &rhs)
+	{
+		this->_type = rhs.getType();
+		*this->_brain = *rhs.getBrain();
+	}
 
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 16:31:25 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/21 15:26:53 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/22 16:04:31 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,12 @@
 
 Brain::Brain(void) : _ideas(new std::string[100]) {
 
-	this->_ideas[0] = "";
-
 	std::cout << "Brain default constructor called" << std::endl;
 
 	return ;
 }
 
-Brain::Brain(std::string str) : _ideas(new std::string[100]) {
-
-
-	this->_ideas[0] = str;
-
-	std::cout << "Brain string constructor called" << std::endl;
-
-	return ;
-}
-
-Brain::Brain(Brain const &src) {
+Brain::Brain(Brain const &src) : _ideas(new std::string[100]) {
 
 	std::cout << "Brain copy constructor called" << std::endl;
 
@@ -64,12 +52,4 @@ Brain	&Brain::operator=(Brain const &rhs) {
 	}
 
 	return *this;
-}
-
-std::ostream	&operator<<(std::ostream &o, Brain const &rhs) {
-
-	o << *rhs.getIdeas();
-
-	return o;
-
 }

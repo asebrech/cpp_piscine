@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:32:20 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/17 12:59:05 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/23 16:44:14 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class	Animal {
 public:
 
 	Animal(void);
-	Animal(std::string	type);
 	Animal(Animal const	&src);
 	virtual ~Animal(void);
 
