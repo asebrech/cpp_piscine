@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 14:05:43 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/24 16:28:57 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:52:11 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,37 +19,18 @@
 
 int	main(void) {
 
-	int	i = 4;
-	Animal	*animal[i];
+	//const Animal* meta = new Animal(); //This will not work
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	std::cout << "creating array" << std::endl << std::endl;
-
-	for (int j = 0; j < (i / 2); j++)
-	{
-		animal[j] = new Dog();	
-	}
-	
-	std::cout << std::endl;
-
-	for (int j = (i / 2); j < i; j++)
-	{
-		animal[j] = new Cat();	
-	}
-
-	std::cout << std::endl << "deleting array" << std::endl << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
 
 
-	for (int j = 0; j < (i / 2); j++)
-	{
-		delete animal[j];
-	}
-
-	std::cout << std::endl;
-	
-	for (int j = (i / 2); j < i; j++)
-	{
-		delete animal[j];
-	}
+	delete j;
+	delete i;
 
 	return 0;
 }
