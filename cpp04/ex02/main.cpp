@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 14:05:43 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/24 16:52:11 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:13:21 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include "WrongCat.hpp"
 #include "Brain.hpp"
 
-int	main(void) {
-
+void	test(void)
+{
 	//const Animal* meta = new Animal(); //This will not work
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -31,6 +31,13 @@ int	main(void) {
 
 	delete j;
 	delete i;
+}
+
+int	main(void)
+{
+	test();
+
+	//while(1);
 
 	return 0;
 }

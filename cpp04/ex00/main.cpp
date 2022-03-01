@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 14:05:43 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/17 19:21:58 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:29:58 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int	main(void) {
 	std::cout << std::endl << std::endl;
 
 	wrong();
+
+	//while (1);
 
 	return 0;
 }

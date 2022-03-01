@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:48:19 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/17 12:24:45 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:25:43 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ Cat::Cat(Cat const &src) {
 
 	std::cout << "Cat copy constructor called" << std::endl;
 
+	this->_type = "Cat";
+
 	*this = src;
 
 	return ;
@@ -55,7 +57,10 @@ Cat	&Cat::operator=(Cat const &rhs) {
 
 	std::cout << "Cat copy assignment operator called" << std::endl;
 
-	this->_type = rhs.getType();
+	if (&rhs != this)
+	{
+		this->_type = rhs.getType();
+	}
 
 	return *this;
 }
