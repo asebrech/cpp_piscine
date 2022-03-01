@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/27 16:30:02 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/28 16:10:19 by asebrech         ###   ########.fr       */
+/*   Created: 2022/03/01 14:06:33 by asebrech          #+#    #+#             */
+/*   Updated: 2022/03/01 14:35:42 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 # include <string>
 # include <iostream>
 
-# include "ICharacter.hpp"
+# include "IMateriaSource.hpp"
+# include "AMateria.hpp"
 
-class	AMateria
+class	MateriaSource : public IMateriaSource
 {
 	public:
 
-		AMateria(void);
-		AMateria(AMateria & src);
-		virtual	~AMateria(void);
+		MateriaSource(void);
+		MateriaSource(MateriaSource & src);
+		virtual	~MateriaSource(void);
 
-		AMateria	& operator=(AMateria const & rhs);
+		MateriaSource	& operator=(MateriaSource const & rhs);
 
-		AMateria(std::string const & type);
+		AMateria	*getMateria_0(void) const;
+		AMateria	*getMateria_1(void) const;
+		AMateria	*getMateria_2(void) const;
+		AMateria	*getMateria_3(void) const;
 
-		std::string const 	& getType() const;
+		virtual void learnMateria(AMateria*);
+		virtual AMateria* createMateria(std::string const & type);
 
-		virtual AMateria	* clone() const = 0; 
-		virtual void		use(ICharacter& target);
-
-	protected:
-
-		std::string	_type;
-
+	private:
+		AMateria	*_materias[4];
 };
 
 #endif

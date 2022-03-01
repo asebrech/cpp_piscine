@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:16:34 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/28 20:51:52 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/01 15:31:36 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Ice::Ice(void)
 {
-	std::cout << "Ice default constructor called" << std::endl;
+	//std::cout << "Ice default constructor called" << std::endl;
 
-	this->_type = "Ice";
+	this->_type = "ice";
 
 	return ;
 }
 
 Ice::Ice(Ice & src)
 {
-	std::cout << "Ice copy constructor called" << std::endl;
+	//std::cout << "Ice copy constructor called" << std::endl;
 
-	this->_type = "Ice";
+	this->_type = "ice";
 
 	*this = src;
 
@@ -34,23 +34,26 @@ Ice::Ice(Ice & src)
 
 Ice::~Ice(void)
 {
-	std::cout << "Ice destructor called" << std::endl;
+	//std::cout << "Ice destructor called" << std::endl;
 
 	return ;
 }
 
 Ice	& Ice::operator=(Ice const & rhs) 
 {
-	std::cout << "Ice copy assignment operator called" << std::endl;
+	//std::cout << "Ice copy assignment operator called" << std::endl;
 
-	this->_type = rhs.getType();
+	if (&rhs != this)
+	{
+		this->_type = rhs.getType();
+	}
 
 	return (*this);	
 }
 
 Ice::Ice(std::string const & type)
 {
-	std::cout << "Ice string constructor called" << std::endl;
+	//std::cout << "Ice string constructor called" << std::endl;
 
 	this->_type = type;
 

@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 18:16:28 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/28 20:50:26 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/01 15:28:40 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Character::Character(void) : _name(""), _index(0)
 {
-	std::cout << "Character default constructor called" << std::endl;
+	//std::cout << "Character default constructor called" << std::endl;
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -26,7 +26,7 @@ Character::Character(void) : _name(""), _index(0)
 
 Character::Character(Character & src) : _name(""), _index(0)
 {
-	std::cout << "Character copy constructor called" << std::endl;
+	//std::cout << "Character copy constructor called" << std::endl;
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -40,7 +40,7 @@ Character::Character(Character & src) : _name(""), _index(0)
 
 Character::~Character(void)
 {
-	std::cout << "Character destructor called" << std::endl;
+	//std::cout << "Character destructor called" << std::endl;
 
 	for (int i = 0; i < this->_index; i++)
 	{
@@ -55,18 +55,20 @@ Character::~Character(void)
 
 Character	& Character::operator=(Character const & rhs) 
 {
-	std::cout << "Character copy assignment operator called" << std::endl;
+	//std::cout << "Character copy assignment operator called" << std::endl;
 
-	this->_name = rhs.getName();
+	if (&rhs != this)
+	{
+		this->_name = rhs.getName();
 
-	for (int i = 0; i < 4; i++)
-		delete this->_materias[i];
+		for (int i = 0; i < 4; i++)
+			delete this->_materias[i];
 
-	this->_materias[0] = rhs.getMateria_0();
-	this->_materias[1] = rhs.getMateria_1();
-	this->_materias[2] = rhs.getMateria_2();
-	this->_materias[3] = rhs.getMateria_3();
-
+		this->_materias[0] = rhs.getMateria_0();
+		this->_materias[1] = rhs.getMateria_1();
+		this->_materias[2] = rhs.getMateria_2();
+		this->_materias[3] = rhs.getMateria_3();
+	}
 	return (*this);	
 }
 
@@ -110,7 +112,7 @@ AMateria	* Character::getMateria_3(void) const
 
 Character::Character(std::string const & name) : _name(name), _index(0)
 {
-	std::cout << "Character string constructor called" << std::endl;
+	//std::cout << "Character string constructor called" << std::endl;
 
 	for (int i = 0; i < 4; i++)
 	{

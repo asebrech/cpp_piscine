@@ -6,7 +6,7 @@
 #    By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/17 14:07:04 by asebrech          #+#    #+#              #
-#    Updated: 2022/02/28 19:01:28 by asebrech         ###   ########.fr        #
+#    Updated: 2022/03/01 14:35:27 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRC =	main.cpp \
 	AMateria.cpp \
 	Ice.cpp \
 	Cure.cpp \
-	Character.cpp 
+	Character.cpp \
+	MateriaSource.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 
