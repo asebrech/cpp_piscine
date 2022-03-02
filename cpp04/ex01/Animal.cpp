@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:29:25 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/23 16:44:27 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:27:15 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Animal::Animal(void) : _type("Animal") {
 	return ;
 }
 
-Animal::Animal(Animal const &src) {
+Animal::Animal(Animal const &src) : _type("Animal") {
 
 	std::cout << "Animal copy constructor called" << std::endl;
 
@@ -35,7 +35,7 @@ Animal::~Animal(void) {
 	return ;
 }
 
-std::string	Animal::getType(void) const {
+std::string const	& Animal::getType(void) const {
 
 	return this->_type;
 }
@@ -44,7 +44,10 @@ Animal	&Animal::operator=(Animal const &rhs) {
 
 	std::cout << "Animal copy assignment operator called" << std::endl;
 
-	this->_type = rhs.getType();
+	if (&rhs != this)
+	{
+		this->_type = rhs.getType();
+	}
 
 	return *this;
 }

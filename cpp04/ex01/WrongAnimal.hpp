@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:43:35 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/17 12:45:33 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:30:09 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 
 	WrongAnimal	&operator=(WrongAnimal const &rhs);
 
-	std::string	getType(void) const;
+	std::string const	& getType(void) const;
 
 	void	makeSound(void) const;
 

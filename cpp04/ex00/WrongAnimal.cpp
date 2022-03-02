@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:42:24 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/01 16:26:53 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:36:56 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ WrongAnimal::~WrongAnimal(void) {
 	return ;
 }
 
-std::string	WrongAnimal::getType(void) const {
+std::string const	& WrongAnimal::getType(void) const {
 
 	return this->_type;
 }

@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 14:05:43 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/24 16:28:57 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:45:42 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include "WrongCat.hpp"
 #include "Brain.hpp"
 
-int	main(void) {
-
+void	test(void)
+{
 	int	i = 4;
 	Animal	*animal[i];
 
@@ -50,6 +50,32 @@ int	main(void) {
 	{
 		delete animal[j];
 	}
+}
+
+void	test_1(void)
+{
+	Dog	a;
+	Dog	b(a);
+
+	a.getBrain()->getIdeas()[0] = "Hello";
+
+	b.getBrain()->getIdeas()[0] = "World";
+
+	std::cout << std::endl;
+	std::cout << a.getBrain()->getIdeas()[0] << std::endl; 
+	std::cout << b.getBrain()->getIdeas()[0] << std::endl; 
+	std::cout << std::endl;
+}
+
+int	main(void) {
+
+	test();
+
+	std::cout << std::endl;
+
+	test_1();
+
+	//while (1);
 
 	return 0;
 }

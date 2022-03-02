@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:44:35 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/17 12:44:38 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:30:49 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ WrongCat::WrongCat(WrongCat const &src) {
 
 	std::cout << "WrongCat copy constructor called" << std::endl;
 
+	this->_type = "WrongCat";
+
 	*this = src;
 
 	return ;
@@ -46,16 +48,14 @@ WrongCat::~WrongCat(void) {
 	return ;
 }
 
-std::string	WrongCat::getType(void) const {
-
-	return this->_type;
-}
-
 WrongCat	&WrongCat::operator=(WrongCat const &rhs) {
 
 	std::cout << "WrongCat copy assignment operator called" << std::endl;
 
-	this->_type = rhs.getType();
+	if (&rhs != this)
+	{
+		this->_type = rhs.getType();
+	}
 
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:48:19 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/23 16:43:38 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:29:38 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@ Cat::~Cat(void) {
 	delete	_brain;
 
 	return ;
-}
-
-std::string	Cat::getType(void) const {
-
-	return this->_type;
 }
 
 Brain	*Cat::getBrain(void) const {

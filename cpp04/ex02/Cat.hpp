@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:49:08 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/23 16:42:10 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:29:19 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ public:
 
 	Cat	&operator=(Cat const &rhs);
 
-	std::string	getType(void) const;
 	Brain	*getBrain(void) const;
 
 	virtual	void	makeSound(void) const;

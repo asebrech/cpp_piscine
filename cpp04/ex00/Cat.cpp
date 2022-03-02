@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:48:19 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/01 16:25:43 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:35:28 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,6 @@ Cat::~Cat(void) {
 	std::cout << "Cat destructor called" << std::endl;
 
 	return ;
-}
-
-std::string	Cat::getType(void) const {
-
-	return this->_type;
 }
 
 Cat	&Cat::operator=(Cat const &rhs) {

@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:48:19 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/23 17:24:33 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:33:00 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,6 @@ Dog::~Dog(void) {
 	delete _brain;
 
 	return ;
-}
-
-std::string	Dog::getType(void) const {
-
-	return this->_type;
 }
 
 Brain	*Dog::getBrain(void) const {

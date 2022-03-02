@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:44:35 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/01 16:27:51 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:37:45 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,6 @@ WrongCat::~WrongCat(void) {
 	std::cout << "WrongCat destructor called" << std::endl;
 
 	return ;
-}
-
-std::string	WrongCat::getType(void) const {
-
-	return this->_type;
 }
 
 WrongCat	&WrongCat::operator=(WrongCat const &rhs) {

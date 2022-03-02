@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:32:20 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/17 12:59:05 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:35:06 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 
 	Animal	&operator=(Animal const &rhs);
 
-	std::string	getType(void) const;
+	std::string const	& getType(void) const;
 
 	virtual	void	makeSound(void) const;
 

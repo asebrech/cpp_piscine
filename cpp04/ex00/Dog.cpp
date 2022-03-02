@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 11:48:19 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/01 16:25:31 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:36:15 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,6 @@ Dog::~Dog(void) {
 	std::cout << "Dog destructor called" << std::endl;
 
 	return ;
-}
-
-std::string	Dog::getType(void) const {
-
-	return this->_type;
 }
 
 Dog	&Dog::operator=(Dog const &rhs) {
