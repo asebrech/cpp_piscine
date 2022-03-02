@@ -6,13 +6,13 @@
 #    By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/17 14:07:04 by asebrech          #+#    #+#              #
-#    Updated: 2022/02/14 11:48:31 by asebrech         ###   ########.fr        #
+#    Updated: 2022/03/02 16:06:59 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = clang++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = fragtrap 
+NAME =  fragtrap
 SRC =	main.cpp \
 	ClapTrap.cpp \
 	ScavTrap.cpp \

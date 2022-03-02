@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:48:24 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/16 16:35:17 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:53:45 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src) {
+ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap() {
 
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 
@@ -61,7 +61,10 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs) {
 
 	std::cout << "ScavTrap copy assignment operator called" << std::endl;
 
-	this->_name = rhs.getName();
+	if (&rhs != this)
+	{
+		this->_name = rhs.getName();
+	}
 
 	return *this;
 }

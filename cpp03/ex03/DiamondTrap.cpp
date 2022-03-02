@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:33:36 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/16 16:55:08 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:52:03 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name), _na
 	return ;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &src) {
+DiamondTrap::DiamondTrap(DiamondTrap const &src) : ScavTrap(), FragTrap(), _name("") {
 
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
 
@@ -55,9 +55,11 @@ DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &rhs) {
 
 	std::cout << "DiamondTrap copy assignment operator called" << std::endl;
 
-	this->_name = rhs.getName();
-	ClapTrap::_name = rhs.getName() + "_clap_name";
-
+	if (&rhs != this)
+	{
+		this->_name = rhs.getName();
+		ClapTrap::_name = rhs.getName() + "_clap_name";
+	}
 	return *this;
 }
 

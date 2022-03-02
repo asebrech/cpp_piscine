@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:34:11 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/14 18:42:31 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:52:59 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	return ;
 }
 
-FragTrap::FragTrap(FragTrap const &src) {
+FragTrap::FragTrap(FragTrap const &src) : ClapTrap() {
 
 	std::cout << "FragTrap copy constructor called" << std::endl;
 
@@ -61,7 +61,10 @@ FragTrap	&FragTrap::operator=(FragTrap const &rhs) {
 
 	std::cout << "FragTrap copy assignment operator called" << std::endl;
 
-	this->_name = rhs.getName();
+	if (&rhs != this)
+	{
+		this->_name = rhs.getName();
+	}
 
 	return *this;
 }

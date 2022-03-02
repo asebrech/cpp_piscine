@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 13:26:05 by asebrech          #+#    #+#             */
-/*   Updated: 2022/02/14 18:03:15 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:47:33 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10), _energyPoint(
 	return ;
 }
 
-ClapTrap::ClapTrap(ClapTrap const &src) {
+ClapTrap::ClapTrap(ClapTrap const &src) : _name(""), _hitPoint(10), _energyPoint(10), _attackDamage(0) {
 
 	std::cout << "ClapTrap copy constructor called" << std::endl;
 
@@ -51,7 +51,10 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs) {
 
 	std::cout << "ClapTrap copy assignment operator called" << std::endl;
 
-	this->_name = rhs.getName();
+	if (&rhs != this)
+	{
+		this->_name = rhs.getName();
+	}
 
 	return *this;
 }
