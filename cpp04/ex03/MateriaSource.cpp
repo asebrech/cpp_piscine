@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 18:16:28 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/01 15:32:38 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/03 17:03:19 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ AMateria	* MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->_materias[i]->getType() == type)
+		if (this->_materias[i] != NULL && this->_materias[i]->getType() == type)
 			return (this->_materias[i]->clone());
 	}
 

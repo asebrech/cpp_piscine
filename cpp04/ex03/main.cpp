@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 17:01:08 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/01 16:54:27 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/03 17:22:24 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,30 @@ void	test(void)
 
 	std::cout << std::endl;
 
-	std::cout << "Unequip 1 and using it :"<< std::endl;
-	me->unequip(1);
+	std::cout << "Equip a wrong materia :"<< std::endl;
+
+	tmp = src->createMateria("wrong");
+	me->equip(tmp);
+	me->use(0, *bob);
 	me->use(1, *bob);
 
 	std::cout << std::endl;
 
-	std::cout << "Equip 1 with ice and using it :"<< std::endl;
+	std::cout << "Unequip slot 1 :"<< std::endl;
+	me->unequip(1);
+	me->use(0, *bob);
+	me->use(1, *bob);
+
+	std::cout << std::endl;
+
+	std::cout << "Equip slot 1 :"<< std::endl;
 	me->equip(src->createMateria("ice"));
 	me->use(0, *bob);
 	me->use(1, *bob);
 	
 	std::cout << std::endl;
 
-	std::cout << "Equip 2 and using 0 1 2 :"<< std::endl;
+	std::cout << "Equip slot 2 :"<< std::endl;
 	me->equip(src->createMateria("cure"));
 	me->use(0, *bob);
 	me->use(1, *bob);
