@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:33:25 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/03 14:24:18 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/03 14:28:13 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	DiamondTrap(void);
 	DiamondTrap(std::string	name);
 	DiamondTrap(DiamondTrap const	&src);
-	virtual ~DiamondTrap(void);
+	~DiamondTrap(void);
 
 	DiamondTrap	&operator=(DiamondTrap const &rhs);
 	std::string	getName(void) const;
