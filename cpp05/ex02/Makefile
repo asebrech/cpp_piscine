@@ -6,7 +6,7 @@
 #    By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/17 14:07:04 by asebrech          #+#    #+#              #
-#    Updated: 2022/03/08 13:20:18 by asebrech         ###   ########.fr        #
+#    Updated: 2022/03/08 13:32:37 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ NAME = form
 SRC =	main.cpp \
 	Bureaucrat.cpp \
 	Form.cpp \
-	ShrubberyCreationForm.cpp
+	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
