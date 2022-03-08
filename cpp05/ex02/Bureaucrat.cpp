@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 10:26:30 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/08 10:14:59 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/08 12:48:01 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,24 @@ void	Bureaucrat::signForm(Form &form) const
 	}
 	catch (Form::GradeTooLowException &e)
 	{
-		std::cout << this->_name << " couldn't sign " << form.getName() << " because of a grade too low " << std::endl;
+		std::cout << this->_name << " couldn't sign " << form.getName() << " because of a grade too low" << std::endl;
+	}
+}
+
+void	Bureaucrat::execute(Form &form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << this->_name << " couldn't execute " << form.getName() << " because of a grade too low" << std::endl;
+	}
+	catch (Form::FormNotSignedException &e)
+	{
+		std::cout << this->_name << " couldn't execute " << form.getName() << " because of a unsigned form" << std::endl;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:10:18 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/08 11:55:08 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/08 12:28:05 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,26 @@ int	Form::getGradeExec() const
 	return (this->_gradeExec);
 }
 
+void	Form::setName(std::string const &name)
+{
+	this->_name = name;
+}
+
+void	Form::setForm(bool form)
+{
+	this->_form = form;
+}
+
+void	Form::setGradeSign(int gradeSign)
+{
+	this->_gradeSign = gradeSign;
+}
+
+void	Form::setGradeExec(int gradeExec)
+{
+	this->_gradeExec = gradeExec;
+}
+
 const char 	*Form::GradeTooHighException::what() const throw()
 {
 	return ("Grade too high");
@@ -113,12 +133,30 @@ const char 	*Form::GradeTooLowException::what() const throw()
 	return ("Grade too low");
 }
 
+const char 	*Form::FormNotSignedException::what() const throw()
+{
+	return ("Form is not signed");
+}
+
 void	Form::beSigned(Bureaucrat const &toto)
 {
 	if (toto.getGrade() <= this->_gradeSign)
 		this->_form = true;
 	else
 		throw Form::GradeTooLowException();
+}
+
+void	Form::execute(Bureaucrat const &executor) const
+{
+	if (this->_form)
+	{
+		if (executor.getGrade() <= this->_gradeExec)
+			this->beExecuted();
+		else
+			throw Form::GradeTooLowException();
+	}
+	else
+		throw Form::FormNotSignedException();
 }
 
 std::ostream	&operator<<(std::ostream &o, Form	const &i)
