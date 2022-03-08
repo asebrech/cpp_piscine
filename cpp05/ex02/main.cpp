@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:39:37 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/08 13:33:33 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/08 16:18:37 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,53 @@
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main(void)
 {
 	try
 	{
-		std::cout << "Testing Form with 100 and 160" << std::endl;
+		Bureaucrat	toto("toto", 73);
+		std::cout << toto << std::endl;	
+		Bureaucrat	tata("tata", 3);
+		std::cout << tata << std::endl;	
 
-		RobotomyRequestForm test("test");
-		
-		Bureaucrat("test", 1).signForm(test);
+		std::cout << std::endl;	
 
-		Bureaucrat("test", 1).execute(test);
-		//test.execute(Bureaucrat("test", 117));
+		ShrubberyCreationForm	home("home");
+		std::cout << home << std::endl;	
+		RobotomyRequestForm	robo("toto");
+		std::cout << robo << std::endl;	
+		PresidentialPardonForm	president("toto");
+		std::cout << president << std::endl;	
 
-		std::cout << test << std::endl;
+		std::cout << std::endl;	
+
+		toto.execute(home);
+		toto.signForm(home);
+		toto.execute(home);
+		std::cout << home << std::endl;	
+
+		std::cout << std::endl;	
+
+		toto.signForm(robo);
+		toto.promote();
+		std::cout << toto << std::endl;	
+		toto.signForm(robo);
+		toto.execute(robo);
+		tata.execute(robo);
+		std::cout << robo << std::endl;	
+
+		std::cout << std::endl;	
+
+		tata.signForm(president);
+		tata.execute(president);
+		std::cout << president << std::endl;	
+
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
-		std::cout << std::endl;
 	}
 
 	return (0);
