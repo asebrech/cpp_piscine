@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 13:26:20 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/08 13:51:48 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/08 16:21:24 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,7 @@ void	RobotomyRequestForm::beExecuted(void) const
 {
 	srand (time(NULL));
 
-	std::cout << "Rizzzz rizzz" << std::endl;
-	std::cout << "Rizzzzzzzzz" << std::endl;
+	std::cout << "Rizzzz rizzz rizzzzzzzzz" << std::endl;
 
 	if (rand() % 2)
 	{
