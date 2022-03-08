@@ -6,7 +6,7 @@
 #    By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/17 14:07:04 by asebrech          #+#    #+#              #
-#    Updated: 2022/03/08 11:35:38 by asebrech         ###   ########.fr        #
+#    Updated: 2022/03/08 13:20:18 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ $(NAME) : $(OBJ)
 
 clean :
 	@rm -rf $(OBJ)
+	@rm -rf *_shrubbery
 
 fclean : clean
 	@rm -rf $(NAME)

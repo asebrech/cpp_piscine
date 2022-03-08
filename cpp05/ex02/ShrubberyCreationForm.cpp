@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 11:38:21 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/08 12:20:14 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/08 13:19:31 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,19 @@ std::string const	&ShrubberyCreationForm::getTarget(void) const
 
 void	ShrubberyCreationForm::beExecuted(void) const
 {
-	std::cout << "this is the way" << std::endl;
+	std::ofstream	ofs(this->_target + "_shrubbery");
+
+	ofs 
+		<< "               ,@@@@@@@,\n"
+		<< "       ,,,.   ,@@@@@@/@@,  .oo8888o.\n"
+		<< "    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n"
+		<< "   ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'\n"
+		<< "   %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'\n"
+		<< "   %&&%/ %&%%&&@@\\ V /@@' `88\\8 `/88'\n"
+		<< "   `&%\\ ` /%&'    |.|        \\ '|8'\n"
+		<< "       |o|        | |         | |\n"
+		<<"       |.|        | |         | |\n"
+		<<"    \\\\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_\n";	
+
+	ofs.close();
 }
