@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:10:18 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/08 11:55:08 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/08 19:53:56 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,12 +105,12 @@ int	Form::getGradeExec() const
 
 const char 	*Form::GradeTooHighException::what() const throw()
 {
-	return ("Grade too high");
+	return ("Error : grade too high");
 }
 
 const char 	*Form::GradeTooLowException::what() const throw()
 {
-	return ("Grade too low");
+	return ("Error : grade too low");
 }
 
 void	Form::beSigned(Bureaucrat const &toto)

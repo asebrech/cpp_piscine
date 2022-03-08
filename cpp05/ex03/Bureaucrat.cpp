@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 10:26:30 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/08 19:55:45 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/08 19:48:49 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,36 @@ void	Bureaucrat::promote(void)
 		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade--;
+}
+
+void	Bureaucrat::signForm(Form &form) const
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << this->_name << " couldn't sign " << form.getName() << " because of a grade too low" << std::endl;
+	}
+}
+
+void	Bureaucrat::execute(Form &form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << this->_name << " couldn't execute " << form.getName() << " because of a grade too low" << std::endl;
+	}
+	catch (Form::FormNotSignedException &e)
+	{
+		std::cout << this->_name << " couldn't execute " << form.getName() << " because of a unsigned form" << std::endl;
+	}
 }
 
 const char 	*Bureaucrat::GradeTooHighException::what() const throw()

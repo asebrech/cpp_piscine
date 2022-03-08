@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:10:18 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/08 19:52:12 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/08 19:49:50 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ void	Form::setGradeExec(int gradeExec)
 
 const char 	*Form::GradeTooHighException::what() const throw()
 {
-	return ("Error: grade too high");
+	return ("Error : grade too high");
 }
 
 const char 	*Form::GradeTooLowException::what() const throw()
