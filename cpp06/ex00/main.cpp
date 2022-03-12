@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:16:53 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/12 15:53:06 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/12 16:07:38 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iomanip>
 #include <stdexcept>
 #include <cmath>
-//#include "Convert.hpp"
 
 int	get_int(std::string const &str)
 {
