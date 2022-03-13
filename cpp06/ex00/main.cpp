@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:16:53 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/12 16:07:38 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/13 18:51:37 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,11 @@ void	print_float(std::string const &str)
 
 void	print_double(std::string const &str)
 {
-	double d = std::stod(str);
+	size_t	idx = 0;
+	double d = std::stod(str, &idx);
+
+	if (idx < str.length() && str.at(idx) == 'f')
+		d = static_cast<double>(std::stof(str));
 
 	std::cout << "double: " << d;
 
