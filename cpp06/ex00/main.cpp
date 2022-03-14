@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:16:53 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/13 18:51:37 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/14 08:59:40 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,15 @@
 #include <limits>
 #include <iomanip>
 #include <stdexcept>
-#include <cmath>
-
-int	get_int(std::string const &str)
-{
-	int test = std::stoi(str);
-	(void)test;
-	size_t	idx = 0;
-	double d = std::stod(str, &idx);
-
-	if (idx < str.length() && str.at(idx) == 'f')
-	{
-		float f = std::stof(str);
-		return (static_cast<int>(f));
-	}
-
-	return (static_cast<int>(d));
-}
 
 void	print_char(std::string const &str)
 {
-	char	c = static_cast<char>(get_int(str));
+	std::stoi(str);
+	double d = std::stod(str);
+	char	c = -1;
+
+	if (d >= std::numeric_limits<char>::min() && d <= std::numeric_limits<char>::max())
+		c = static_cast<char>(d);
 
 	if (std::isprint(c))
 		std::cout << "char: '" << c << "'" <<std::endl;
@@ -45,37 +33,21 @@ void	print_char(std::string const &str)
 
 void	print_int(std::string const &str)
 {
-	int	i = get_int(str);
+	std::stoi(str);
 
-	std::cout << "int: " << i << std::endl;
+	std::cout << "int: " << static_cast<int>(std::stod(str)) << std::endl;
 }
 
 void	print_float(std::string const &str)
 {
-	float f = std::stof(str);
+	std::stof(str);
 
-	std::cout << "float: " << f;
-
-	if (std::roundf(f) == f)
-		std::cout << ".0";
-
-	std::cout << "f" << std::endl;
+	std::cout << "float: " << static_cast<float>(std::stod(str)) << "f" << std::endl;
 }
 
 void	print_double(std::string const &str)
 {
-	size_t	idx = 0;
-	double d = std::stod(str, &idx);
-
-	if (idx < str.length() && str.at(idx) == 'f')
-		d = static_cast<double>(std::stof(str));
-
-	std::cout << "double: " << d;
-
-	if (std::round(d) == d)
-		std::cout << ".0";
-
-	std::cout << std::endl;
+	std::cout << "double: " << std::stod(str) << std::endl;
 }
 
 void	check_error(void (*fn)(std::string const &), std::string const &str, std::string const &type)
@@ -97,11 +69,13 @@ void	check_error(void (*fn)(std::string const &), std::string const &str, std::s
 int	ischar(std::string const &str)
 {
 	if (str.length() == 1 && !std::isdigit(str.at(0)))
-	{
-		std::cout << "char: '" << str.at(0) << "'" <<std::endl;
-		std::cout << "int: " << static_cast<int>(str.at(0)) << std::endl;
-		std::cout << "float: " << static_cast<float>(str.at(0)) << ".0f"  << std::endl;
-		std::cout << "double: " << static_cast<double>(str.at(0)) << ".0" << std::endl;
+	{		
+		char c = str.at(0);
+
+		std::cout << "char: '" << c << "'" <<std::endl;
+		std::cout << "int: " << static_cast<int>(c) << std::endl;
+		std::cout << "float: " << static_cast<float>(c) << "f"  << std::endl;
+		std::cout << "double: " << static_cast<double>(c) << std::endl;
 
 		return (1);
 	}
@@ -115,6 +89,7 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		std::string const	str(av[1]);
+		std::cout << std::fixed << std::setprecision(1);
 		if (!ischar(str))
 		{
 			check_error(&print_char, str, std::string("char"));
