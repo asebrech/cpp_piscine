@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:16:53 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/13 15:11:57 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/14 11:55:42 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	main(void)
 
 	test1->data = "This is the way";
 
-	std::cout << "test1 ptr : " << test1 << " | contente : " << test1->data << std::endl;
-	std::cout << "test2 ptr : " << test2 << " | contente : " << test2->data  << std::endl;
+	std::cout << "test1 ptr : " << test1 << " | content : " << test1->data << std::endl;
+	std::cout << "test2 ptr : " << test2 << " | content : " << test2->data  << std::endl;
 
 	delete	test1;
 
