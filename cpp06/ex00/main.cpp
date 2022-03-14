@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:16:53 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/14 08:59:40 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/14 10:09:58 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,9 @@ void	print_float(std::string const &str)
 
 void	print_double(std::string const &str)
 {
-	std::cout << "double: " << std::stod(str) << std::endl;
+	double d = std::stod(str);
+
+	std::cout << "double: " << d << std::endl;
 }
 
 void	check_error(void (*fn)(std::string const &), std::string const &str, std::string const &type)
