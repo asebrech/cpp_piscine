@@ -6,13 +6,13 @@
 #    By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/17 14:07:04 by asebrech          #+#    #+#              #
-#    Updated: 2022/03/13 14:39:30 by asebrech         ###   ########.fr        #
+#    Updated: 2022/03/15 10:56:48 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = clang++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = a.out 
+NAME = iter 
 SRC =	main.cpp
 
 OBJ = $(SRC:.cpp=.o)
