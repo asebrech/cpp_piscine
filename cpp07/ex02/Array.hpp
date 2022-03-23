@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:08:28 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/15 15:16:02 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/23 13:29:37 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ class	Array {
 
 		T	&operator[](unsigned int const idx) const
 		{
-			if (idx >= static_cast<unsigned int>(this->_size))
-				throw std::overflow_error("Error: Index");
+			if (idx >= this->_size)
+				throw std::range_error("Error: Index");
 			return (this->_array[idx]);
 		}
 
