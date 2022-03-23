@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 16:09:03 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/23 00:00:58 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/23 12:28:46 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void	Span::addByIt(std::vector<int>::iterator begin, std::vector<int>::iterator 
 		this->_vector.insert(this->_vector.end(), begin, end); 
 	}
 	else
-		throw std::logic_error("Not enough place in the range");
+		throw std::range_error("Not enough place in the range");
 }
 
 std::ostream	&operator<<(std::ostream &o, Span const &rhs)
