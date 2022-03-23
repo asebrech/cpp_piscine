@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 16:54:56 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/20 17:12:59 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/03/23 12:47:43 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 template <typename T>
 typename T::iterator	easyfind(T &type, int const &nbr)
 {
-	typename T::iterator	it = std::find(type.begin(), type.end(), nbr);
-
-	return(it);
+	return (std::find(type.begin(), type.end(), nbr));
 }
 
 template <typename T>
