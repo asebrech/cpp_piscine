@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:59:50 by asebrech          #+#    #+#             */
-/*   Updated: 2022/03/23 11:50:56 by asebrech         ###   ########.fr       */
+/*   Updated: 2022/04/19 15:35:02 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ class	MutantStack : public std::stack<T>
 
 		typedef typename std::stack<T>::container_type::iterator iterator;
 
-		iterator	begin() { return std::begin(this->c); }
-		iterator	end() { return std::end(this->c); }
+		iterator	begin() { return std::stack<T>::c.begin(); }
+		iterator	end() { return std::stack<T>::c.end(); }
 };
 
 #endif
